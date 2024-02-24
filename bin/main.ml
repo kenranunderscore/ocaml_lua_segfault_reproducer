@@ -5,8 +5,8 @@ module Sdl = Tsdl.Sdl
 let () =
   let ls = LuaL.newstate () in
   LuaL.openlibs ls;
+  (* this seems to be the problem *)
   LuaL.register ls (Some "lib") [];
-  if LuaL.dofile ls "test.lua" then print_endline "ok" else print_endline "not ok";
   Sdl.init Sdl.Init.(video + events) |> ignore;
   match Sdl.create_window_and_renderer ~w:500 ~h:300 Sdl.Window.mouse_focus with
   | Ok (_w, r) ->
