@@ -1,4 +1,4 @@
 (executable
  (public_name ocaml_lua_segfault_reproducer)
  (name main)
- (libraries ocaml-lua tsdl))
+ (libraries ocaml-lua))
